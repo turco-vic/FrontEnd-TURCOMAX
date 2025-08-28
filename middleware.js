@@ -1,4 +1,3 @@
-/*
 import {NextResponse} from 'next/server';
 
 export const config = {
@@ -8,4 +7,3 @@ export const config = {
 export function middleware(req) {
     return NextResponse.redirect(new URL("/intro", req.url));
 }
-*/
