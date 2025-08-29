@@ -1,4 +1,8 @@
 .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     background-color: #000000;
     color: #43b0f1;
     font-weight: normal;

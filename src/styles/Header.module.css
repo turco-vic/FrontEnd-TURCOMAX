@@ -1,7 +1,50 @@
 .container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     background-color: #000000;
     color: #43b0f1;
     font-weight: bold;
     padding: 20px;
     text-align: center;
+    box-shadow: 0 2px 8px #0000004d;
+}
+
+.visual {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    margin: 0;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.navLink {
+    color: #43b0f1;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.navLink:hover {
+    background-color: #43b0f1;
+    color: #000000;
+    transform: translateY(-2px);
 }

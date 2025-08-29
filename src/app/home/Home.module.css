@@ -1,0 +1,350 @@
+.container {
+    min-height: 100vh;
+    background-color: #212121;
+    padding-top: 5rem;
+}
+
+.content {
+    max-width: 64rem;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 1.875rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #ffffff;
+}
+
+.buttonContainer {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.loadingContainer {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.loadingText {
+    color: white;
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+.buttonWrapper {
+    margin-bottom: 1.5rem;
+}
+
+.searchButton {
+    background-color: #43b0f1;
+    color: #ffffff;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.searchButton:hover {
+    background-color: #2563eb;
+}
+
+.searchButton:disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 #0000001a, 0 1px 2px 0 #0000000f;
+    padding: 1rem;
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 10px 15px -3px #0000001a, 0 4px 6px -2px #0000000d;
+}
+
+.imageContainer {
+    margin-bottom: 0.75rem;
+}
+
+.image {
+    width: 100%;
+    height: 12rem;
+    object-fit: cover;
+    border-radius: 0.375rem;
+}
+
+.cardTitle {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.cardInfo {
+    font-size: 0.875rem;
+    color: #4b5563;
+    margin-bottom: 0.5rem;
+}
+
+.cardSummary {
+    font-size: 0.875rem;
+    color: #374151;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.paginationContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0 2rem 0;
+    padding: 1rem;
+    gap: 8px;
+}
+
+.paginationButton {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+    font-size: 14px;
+    min-width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    margin: 0 2px;
+}
+
+.paginationButton:hover {
+    color: #43b0f1;
+    background-color: rgba(67, 176, 241, 0.1);
+}
+
+.paginationButton.active {
+    color: #43b0f1;
+    font-weight: 600;
+    background-color: rgba(67, 176, 241, 0.15);
+}
+
+.paginationButton.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.paginationButton.disabled:hover {
+    color: rgba(255, 255, 255, 0.7);
+    background: transparent;
+}
+
+.ellipsis {
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 500;
+    font-size: 14px;
+    min-width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 2px;
+    user-select: none;
+}
+
+.paginationContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0 2rem 0;
+    padding: 2rem 1rem;
+    background: linear-gradient(135deg, #43b0f10d, #43b0f11a);
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid #43b0f133;
+    box-shadow: 0 8px 32px #0000001a;
+}
+
+.pagination {
+    background-color: transparent !important;
+}
+
+.pagination :global(.ant-pagination-item) {
+    background: linear-gradient(135deg, #ffffff1a, rgba(255, 255, 255, 0.05)) !important;
+    border: 2px solid rgba(67, 176, 241, 0.3) !important;
+    border-radius: 8px !important;
+    margin: 0 6px !important;
+    min-width: 40px !important;
+    height: 40px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    backdrop-filter: blur(8px) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.pagination :global(.ant-pagination-item a) {
+    color: #43b0f1 !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 100% !important;
+    text-decoration: none !important;
+}
+
+.pagination :global(.ant-pagination-item:hover) {
+    background: linear-gradient(135deg, #43b0f133, #43b0f11a) !important;
+    border-color: #43b0f1 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 16px #43b0f14d !important;
+}
+
+.pagination :global(.ant-pagination-item:hover a) {
+    color: #ffffff !important;
+}
+
+.pagination :global(.ant-pagination-item-active) {
+    background: linear-gradient(135deg, #43b0f1, #2563eb) !important;
+    border-color: #43b0f1 !important;
+    box-shadow: 0 4px 20px #43b0f14d !important;
+    transform: translateY(-1px) !important;
+}
+
+.pagination :global(.ant-pagination-item-active a) {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
+.pagination :global(.ant-pagination-prev),
+.pagination :global(.ant-pagination-next) {
+    background: linear-gradient(135deg, #ffffff1a, #ffffff05) !important;
+    border: 2px solid #43b0f133 !important;
+    border-radius: 8px !important;
+    min-width: 40px !important;
+    height: 40px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    backdrop-filter: blur(8px) !important;
+    box-shadow: 0 2px 8px #0000001a !important;
+}
+
+.pagination :global(.ant-pagination-prev .ant-pagination-item-link),
+.pagination :global(.ant-pagination-next .ant-pagination-item-link) {
+    color: #43b0f1 !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    background: transparent !important;
+    border: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.pagination :global(.ant-pagination-prev:hover),
+.pagination :global(.ant-pagination-next:hover) {
+    background: linear-gradient(135deg, #43b0f133, #43b0f11a) !important;
+    border-color: #43b0f1 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 16px #43b0f14d !important;
+}
+
+.pagination :global(.ant-pagination-prev:hover .ant-pagination-item-link),
+.pagination :global(.ant-pagination-next:hover .ant-pagination-item-link) {
+    color: #ffffff !important;
+}
+
+.pagination :global(.ant-pagination-disabled) {
+    opacity: 0.4 !important;
+    cursor: not-allowed !important;
+}
+
+.pagination :global(.ant-pagination-disabled:hover) {
+    transform: none !important;
+    background: linear-gradient(135deg, #ffffff1a, #ffffff0d) !important;
+    box-shadow: 0 2px 8px #0000001a !important;
+}
+
+.pagination :global(.ant-pagination-jump-prev),
+.pagination :global(.ant-pagination-jump-next) {
+    color: #43b0f1 !important;
+    font-weight: bold !important;
+}
+
+.pagination :global(.ant-pagination-jump-prev:hover),
+.pagination :global(.ant-pagination-jump-next:hover) {
+    color: #ffffff !important;
+}
+
+.pagination :global(.ant-pagination-total-text) {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    margin-right: 16px !important;
+    padding: 8px 12px !important;
+    background: #43b0f11a !important;
+    border-radius: 6px !important;
+    border: 1px solid #43b0f133 !important;
+    backdrop-filter: blur(8px) !important;
+}
+
+.pagination :global(.ant-pagination-options-quick-jumper) {
+    color: #ffffff !important;
+    margin-left: 16px !important;
+}
+
+.pagination :global(.ant-pagination-options-quick-jumper input) {
+    background: #ffffff1a !important;
+    border: 2px solid #43b0f14d !important;
+    border-radius: 6px !important;
+    color: #ffffff !important;
+    padding: 4px 8px !important;
+    font-weight: 500 !important;
+    backdrop-filter: blur(8px) !important;
+    transition: all 0.3s ease !important;
+}
+
+.pagination :global(.ant-pagination-options-quick-jumper input:focus) {
+    border-color: #43b0f1 !important;
+    box-shadow: 0 0 0 2px #43b0f133 !important;
+    outline: none !important;
+}
+
+.pagination :global(.ant-pagination-options-quick-jumper input::placeholder) {
+    color: #ffffff80 !important;
+}

@@ -1,69 +1,64 @@
 "use client";
-import axios from "axios";
-import { useState } from "react";
-import Image from "next/image";
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Card from '../components/Card';
 
-export default function Home() {
-    const [data, setData] = useState([]);
-    const [loading, setLoading] = useState(false);
+export default function Intro() {
+    const router = useRouter();
 
-    const buscarSeries = async () => {
-        setLoading(true);
-        try {
-            const response = await axios.get("https://api.tvmaze.com/shows");
-            setData(response.data);
-            console.log(response.data);
-
-        } catch (error) {
-            console.error("Erro ao buscar séries:", error);
-        } finally {
-            setLoading(false);
-        }
+    const irParaPaginaSeries = () => {
+        router.push('/home');
     };
 
+    const tecnologiasImgs = [
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+        "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+        "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1200px-CSS3_logo_and_wordmark.svg.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1024px-HTML5_logo_and_wordmark.svg.png"
+    ];
+
     return (
-        <div className="min-h-screen bg-[#212121]">
+        <div className="min-h-screen bg-[#212121] pt-20">
             <Header />
-            <div className="max-w-4xl mx-auto">
-                <h1 className="text-3xl font-bold text-center mb-8 text-white">TURCOMAX</h1>
-                <div className="text-center mb-8">
+
+            <div className="max-w-4xl mx-auto px-4 py-8 m-8">
+
+                <div className="max-w-2xl mx-auto">
+                    <div className="text-center mb-8">
+                        <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-[#43b0f1] shadow-lg">
+                            <img 
+                                src="https://avatars.githubusercontent.com/u/157549897?v=4" 
+                                alt="Enzo Turcovic" 
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
+                        <p className="text-2xl font-bold text-white">Enzo Turcovic</p>
+                    </div>
+
+                    <Card 
+                        title="Sobre mim" 
+                        text="Olá! Meu nome é Enzo, tenho 17 anos, e atualmente estou cursando Desenvolvimento de sistema no SENAI Valinhos! Este site foi feito com o propósito de realizar a ativade de Front-End utilizando Next.JS!"
+                    />
+                    
+                    <Card 
+                        title="Tecnologias que utilizo:" 
+                        imgs={tecnologiasImgs} 
+                    />
+
                     <div className="mb-6">
-                        <button onClick={buscarSeries} disabled={loading} className="bg-[#43b0f1] text-white px-8 py-3 rounded-lg hover:bg-blue-600 disabled:bg-gray-400 font-semibold ">
-                            {loading ? "Carregando..." : "Buscar Séries"}
+                        <button 
+                            onClick={irParaPaginaSeries} 
+                            className="w-full bg-[#43b0f1] text-white px-8 py-3 rounded-lg hover:bg-blue-600 font-semibold transition-colors duration-300"
+                        >
+                            Página de Séries
                         </button>
                     </div>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
-                    {data.map((item) => (
-                        <div key={item.id} className="bg-white border rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
-                            <div className="mb-3">
-                                {item.image && (
-                                    <Image
-                                        src={item.image.medium}
-                                        alt={item.name}
-                                        width={300}
-                                        height={192}
-                                        className="w-full h-48 object-cover rounded-md"
-                                    />
-                                )}
-                            </div>
-                            <h3 className="text-lg font-semibold mb-2">{item.name}</h3>
-                            <p className="text-sm text-gray-600 mb-2">
-                                <strong>Gêneros:</strong> {item.genres?.join(', ') || 'N/A'}
-                            </p>
-                            <p className="text-sm text-gray-600 mb-2">
-                                <strong>Nota:</strong> {item.rating?.average || 'N/A'}
-                            </p>
-                            <div
-                                className="text-sm text-gray-700 line-clamp-3"
-                                dangerouslySetInnerHTML={{ __html: item.summary || 'Sem resumo disponível' }}
-                            />
-                        </div>
-                    ))}
-                </div>
             </div>
+            
             <Footer />
         </div>
     );
