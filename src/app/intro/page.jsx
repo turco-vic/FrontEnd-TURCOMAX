@@ -27,10 +27,10 @@ export default function Home() {
         <div className="min-h-screen bg-[#212121]">
             <Header />
             <div className="max-w-4xl mx-auto">
-                <h1 className="text-3xl font-bold text-center mb-8 text-white">TURCOFLIX</h1>
+                <h1 className="text-3xl font-bold text-center mb-8 text-white">TURCOMAX</h1>
                 <div className="text-center mb-8">
                     <div className="mb-6">
-                        <button onClick={buscarSeries} disabled={loading} className="bg-blue-500 text-white px-8 py-3 rounded-lg hover:bg-blue-600 disabled:bg-gray-400 font-semibold ">
+                        <button onClick={buscarSeries} disabled={loading} className="bg-[#43b0f1] text-white px-8 py-3 rounded-lg hover:bg-blue-600 disabled:bg-gray-400 font-semibold ">
                             {loading ? "Carregando..." : "Buscar Séries"}
                         </button>
                     </div>

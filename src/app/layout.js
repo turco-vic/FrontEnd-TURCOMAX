@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "TURCOFLIX",
+  title: "TURCOMAX",
   description: "",
   icons: {
       icon: "/icons/favicon.ico",
