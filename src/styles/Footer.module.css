@@ -8,4 +8,78 @@
     font-weight: normal;
     padding: 15px;
     text-align: center;
+    gap: 1rem;
+}
+
+.socialContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.socialLink {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #43b0f1;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    background-color: transparent;
+    border: 2px solid #43b0f1;
+}
+
+.socialLink:hover {
+    color: #ffffff;
+    background-color: #43b0f1;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px #43B0F140;
+}
+
+.instagramIcon {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease;
+}
+
+.text {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 12px;
+        gap: 0.8rem;
+    }
+
+    .socialLink {
+        padding: 6px;
+        border-width: 1.5px;
+    }
+
+    .instagramIcon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .text {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    .instagramIcon {
+        width: 18px;
+        height: 18px;
+    }
+
+    .text {
+        font-size: 0.75rem;
+    }
 }

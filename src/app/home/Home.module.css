@@ -1,11 +1,11 @@
 .container {
     min-height: 100vh;
     background-color: #212121;
-    padding-top: 5rem;
+    padding-top: 8rem;
 }
 
 .content {
-    max-width: 1200px;
+    width: 85%;
     margin: 0 auto;
     padding: 0 1rem;
 }
@@ -15,7 +15,6 @@
     flex-direction: column;
     gap: 3rem;
     padding: 2rem 0;
-    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -115,10 +114,9 @@
 
 .carouselContainer {
     position: relative;
-    width: 100%;
-    max-width: 1200px;
-    height: 500px;
-    margin: 2rem auto;
+    width: 95%;
+    height: 30rem;
+    margin: 0.5rem auto 0.5rem auto;
     border-radius: 1rem;
     overflow: hidden;
     box-shadow: 0 8px 32px #0000004d;
@@ -271,9 +269,13 @@
 }
 
 @media (max-width: 768px) {
+    .container {
+        padding-top: 10rem;
+    }
+
     .carouselContainer {
         height: 300px;
-        margin: 1rem;
+        margin: 2rem 1rem 1rem 1rem;
     }
     
     .content {

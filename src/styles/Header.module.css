@@ -63,3 +63,84 @@
 .navLink:hover {
     color: #ffffff;
 }
+
+@media (max-width: 425px) {
+    .container {
+        padding: 15px;
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .visual {
+        justify-content: center;
+        padding: 6px 10px;
+    }
+
+    .title {
+        font-size: 1.3rem;
+    }
+
+    .logo {
+        width: 35px;
+        height: 35px;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .navLink {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 12px;
+    }
+
+    .title {
+        font-size: 1.1rem;
+    }
+
+    .logo {
+        width: 30px;
+        height: 30px;
+    }
+
+    .navLink {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        padding: 18px;
+    }
+
+    .title {
+        font-size: 1.4rem;
+    }
+
+    .navLink {
+        font-size: 1.05rem;
+        padding: 9px 18px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .container {
+        padding: 20px 40px;
+    }
+
+    .nav {
+        gap: 10px;
+    }
+
+    .navLink {
+        padding: 12px 25px;
+    }
+}
