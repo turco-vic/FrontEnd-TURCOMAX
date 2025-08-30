@@ -19,6 +19,23 @@
     display: flex;
     align-items: center;
     gap: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.visual:hover {
+    background-color: #43B0F11A;
+    transform: scale(1.02);
+}
+
+.logo {
+    transition: all 0.3s ease;
+}
+
+.visual:hover .logo {
+    transform: rotate(5deg);
 }
 
 .title {

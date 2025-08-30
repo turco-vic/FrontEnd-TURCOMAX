@@ -5,8 +5,341 @@
 }
 
 .content {
-    max-width: 64rem;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.genresContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 2rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.genreSection {
+    width: 100%;
+}
+
+.genreTitle {
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+}
+
+.genreRow {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.genreScroll {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    padding: 1rem 0;
+    flex: 1;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.genreScroll::-webkit-scrollbar {
+    display: none;
+}
+
+.genreCard {
+    flex-shrink: 0;
+    background: transparent;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.genreCard:hover {
+    transform: scale(1.1);
+    z-index: 10;
+}
+
+.genreImage {
+    width: 150px;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px #0000004D;
+    transition: all 0.3s ease;
+}
+
+.genreCard:hover .genreImage {
+    box-shadow: 0 8px 25px #43B0F166;
+}
+
+.scrollButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: #FFFFFFCC;
+    font-size: 2rem;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scrollButton:hover {
+    color: #43b0f1;
+    transform: translateY(-50%) scale(1.2);
+    text-shadow: 0 0 10px #43B0F180;
+}
+
+.scrollButtonLeft {
+    left: -30px;
+}
+
+.scrollButtonRight {
+    right: -30px;
+}
+
+.carouselContainer {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 500px;
+    margin: 2rem auto;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 8px 32px #0000004d;
+}
+
+.carouselBanner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: linear-gradient(135deg, #212121, #333333);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carouselImage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.carouselOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to top,
+        #000000e6 0%,
+        #00000099 30%,
+        #0000004d 60%,
+        #0000001a 80%,
+        transparent 100%
+    );
+    z-index: 5;
+}
+
+.carouselInfo {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px #000000b3;
+    max-width: 50%;
+    z-index: 10;
+}
+
+.carouselTitle {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+    text-shadow: 2px 2px 8px #000000cc;
+}
+
+.carouselRating {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #43b0f1;
+    text-shadow: 1px 1px 3px #000000cc;
+}
+
+.starIcon {
+    color: #43b0f1;
+    text-shadow: 0 0 3px #43b0f1;
+    font-weight: bold;
+}
+
+.carouselGenres {
+    font-size: 1.1rem;
+    color: #ffffffe6;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 3px #000000cc;
+}
+
+.carouselCounter {
+    font-size: 0.9rem;
+    color: #ffffffb3;
+    text-shadow: 1px 1px 3px #000000cc;
+    margin-top: 0.5rem;
+}
+
+.carouselButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 1rem;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 3rem;
+    font-weight: bold;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    user-select: none;
+    text-shadow: 2px 2px 8px #000000cc;
+}
+
+.carouselButtonNext {
+    left: auto;
+    right: 1rem;
+}
+
+.carouselButton:hover {
+    color: #43b0f1;
+    transform: translateY(-50%) scale(1.2);
+    text-shadow: 2px 2px 12px #43b0f1cc;
+}
+
+.carouselButton:active {
+    transform: translateY(-50%) scale(1.0);
+}
+
+.carouselIndicators {
+    position: absolute;
+    bottom: 1rem;
+    right: 2rem;
+    display: flex;
+    gap: 0.5rem;
+    z-index: 15;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid #ffffff80;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.activeIndicator {
+    background: #43b0f1;
+    border-color: #43b0f1;
+    transform: scale(1.3);
+    box-shadow: 0 0 10px #43b0f199;
+}
+
+@media (max-width: 768px) {
+    .carouselContainer {
+        height: 300px;
+        margin: 1rem;
+    }
+    
+    .content {
+        padding: 0 0.5rem;
+    }
+    
+    .genresContainer {
+        padding: 1rem 0;
+        gap: 2rem;
+    }
+    
+    .carouselInfo {
+        bottom: 1rem;
+        left: 1rem;
+        max-width: 70%;
+    }
+    
+    .carouselTitle {
+        font-size: 1.8rem;
+    }
+    
+    .carouselRating {
+        font-size: 1.1rem;
+    }
+    
+    .carouselGenres {
+        font-size: 0.9rem;
+    }
+    
+    .carouselButton {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+    
+    .carouselIndicators {
+        bottom: 0.5rem;
+        right: 1rem;
+    }
+    
+    .genreTitle {
+        font-size: 1.5rem;
+    }
+    
+    .scrollButton {
+        width: 35px;
+        height: 35px;
+        font-size: 1.8rem;
+    }
+    
+    .scrollButtonLeft {
+        left: -25px;
+    }
+    
+    .scrollButtonRight {
+        right: -25px;
+    }
+    
+    .genreCard {
+        min-width: 120px;
+    }
+    
+    .genreImage {
+        width: 120px;
+        height: 168px;
+    }
 }
 
 .title {
@@ -28,7 +361,7 @@
 }
 
 .loadingText {
-    color: white;
+    color: #ffffff;
     font-size: 1.125rem;
     font-weight: 500;
 }
@@ -59,67 +392,48 @@
 
 .grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
     gap: 1.5rem;
     padding: 1rem;
+    justify-items: center;
 }
 
 @media (min-width: 768px) {
     .grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+        gap: 2rem;
     }
 }
 
 @media (min-width: 1024px) {
     .grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+        gap: 2rem;
     }
 }
 
 .card {
-    background-color: #ffffff;
-    border: 1px solid #e5e7eb;
+    background: transparent;
+    border: none;
     border-radius: 0.5rem;
-    box-shadow: 0 1px 3px 0 #0000001a, 0 1px 2px 0 #0000000f;
-    padding: 1rem;
-    transition: box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px #00000033;
+    padding: 0;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative;
 }
 
 .card:hover {
-    box-shadow: 0 10px 15px -3px #0000001a, 0 4px 6px -2px #0000000d;
-}
-
-.imageContainer {
-    margin-bottom: 0.75rem;
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px #43B0F14D;
 }
 
 .image {
     width: 100%;
-    height: 12rem;
+    height: auto;
     object-fit: cover;
-    border-radius: 0.375rem;
-}
-
-.cardTitle {
-    font-size: 1.125rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-}
-
-.cardInfo {
-    font-size: 0.875rem;
-    color: #4b5563;
-    margin-bottom: 0.5rem;
-}
-
-.cardSummary {
-    font-size: 0.875rem;
-    color: #374151;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
 }
 
 .paginationContainer {

@@ -1,0 +1,252 @@
+@keyframes shimmer {
+    0% {
+        background-position: -468px 0;
+    }
+    100% {
+        background-position: 468px 0;
+    }
+}
+
+.skeletonBase {
+    background: linear-gradient(90deg, #333333 25%, #444444 50%, #333333 75%);
+    background-size: 400% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 4px;
+}
+
+.skeletonCard {
+    background: transparent;
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 0;
+    overflow: hidden;
+}
+
+.skeletonImage {
+    width: 210px;
+    height: 295px;
+    border-radius: 0.5rem;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 400% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+.skeletonGenresContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 2rem 0;
+}
+
+.skeletonGenreSection {
+    width: 100%;
+}
+
+.skeletonGenreTitle {
+    background: linear-gradient(90deg, #666666 25%, #777777 50%, #666666 75%);
+    background-size: 400% 100%;
+    animation: shimmer 1.5s infinite;
+    height: 1.8rem;
+    width: 200px;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+.skeletonGenreRow {
+    display: flex;
+    gap: 1rem;
+    overflow: hidden;
+}
+
+.skeletonGenreCard {
+    flex-shrink: 0;
+}
+
+.skeletonGenreImage {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 400% 100%;
+    animation: shimmer 1.5s infinite;
+    width: 150px;
+    height: 210px;
+    border-radius: 0.5rem;
+}
+
+.skeletonCarousel {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 500px;
+    margin: 2rem auto;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #212121, #333333);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skeletonCarouselImage {
+    background: linear-gradient(90deg, #444444 25%, #555555 50%, #444444 75%);
+    background-size: 400% 100%;
+    animation: shimmer 1.5s infinite;
+    width: 300px;
+    height: 400px;
+    border-radius: 0.75rem;
+    margin-right: 2rem;
+}
+
+.skeletonCarouselInfo {
+    flex: 1;
+    max-width: 400px;
+}
+
+.skeletonCarouselTitle {
+    background: linear-gradient(90deg, #666666 25%, #777777 50%, #666666 75%);
+    background-size: 400% 100%;
+    animation: shimmer 1.5s infinite;
+    height: 2.5rem;
+    width: 90%;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+}
+
+.skeletonCarouselRating {
+    background: linear-gradient(90deg, #666666 25%, #777777 50%, #666666 75%);
+    background-size: 400% 100%;
+    animation: shimmer 1.5s infinite;
+    height: 1.3rem;
+    width: 40%;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+}
+
+.skeletonCarouselGenres {
+    background: linear-gradient(90deg, #666666 25%, #777777 50%, #666666 75%);
+    background-size: 400% 100%;
+    animation: shimmer 1.5s infinite;
+    height: 1.1rem;
+    width: 70%;
+    border-radius: 4px;
+}
+
+.skeletonPagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0 2rem 0;
+    padding: 2rem 1rem;
+    background: linear-gradient(135deg, #43b0f10d, #43b0f11a);
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid #43b0f133;
+    box-shadow: 0 8px 32px #0000001a;
+    gap: 8px;
+}
+
+.skeletonPaginationButton {
+    background: linear-gradient(90deg, #555555 25%, #666666 50%, #555555 75%);
+    background-size: 400% 100%;
+    animation: shimmer 1.5s infinite;
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    margin: 0 2px;
+}
+
+@media (max-width: 768px) {
+    .skeletonCarousel {
+        height: 300px;
+        margin: 1rem;
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .skeletonCarouselImage {
+        width: 200px;
+        height: 250px;
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .skeletonCarouselInfo {
+        text-align: center;
+    }
+}
+
+.skeletonProfile {
+    min-height: 100vh;
+    background-color: #212121;
+    padding: 8rem 1rem 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.skeletonProfileImage {
+    background: linear-gradient(90deg, #666666 25%, #777777 50%, #666666 75%);
+    background-size: 400% 100%;
+    animation: shimmer 1.5s infinite;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.skeletonProfileCard {
+    background: linear-gradient(135deg, #ffffff1a, #ffffff05);
+    backdrop-filter: blur(10px);
+    border: 1px solid #43b0f133;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 8px 32px #0000001a;
+    width: 100%;
+    max-width: 500px;
+}
+
+.skeletonProfileTitle {
+    background: linear-gradient(90deg, #666666 25%, #777777 50%, #666666 75%);
+    background-size: 400% 100%;
+    animation: shimmer 1.5s infinite;
+    height: 2rem;
+    width: 60%;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+.skeletonProfileText {
+    background: linear-gradient(90deg, #666666 25%, #777777 50%, #666666 75%);
+    background-size: 400% 100%;
+    animation: shimmer 1.5s infinite;
+    height: 1rem;
+    width: 90%;
+    margin-bottom: 0.75rem;
+    border-radius: 4px;
+}
+
+.skeletonTechGrid {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.skeletonTechIcon {
+    background: linear-gradient(90deg, #666666 25%, #777777 50%, #666666 75%);
+    background-size: 400% 100%;
+    animation: shimmer 1.5s infinite;
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+}
+
+.skeletonButton {
+    background: linear-gradient(90deg, #666666 25%, #777777 50%, #666666 75%);
+    background-size: 400% 100%;
+    animation: shimmer 1.5s infinite;
+    width: 200px;
+    height: 50px;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+}

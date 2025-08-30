@@ -1,12 +1,23 @@
 "use client";
 import { useRouter } from 'next/navigation';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Card from '../components/Card';
+import { SkeletonProfile } from '../components/Skeleton';
 
 export default function Intro() {
     const router = useRouter();
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setLoading(false);
+        }, 1000);
+
+        return () => clearTimeout(timer);
+    }, []);
 
     const irParaPaginaSeries = () => {
         router.push('/home');
@@ -24,7 +35,10 @@ export default function Intro() {
         <div className="min-h-screen bg-[#212121] pt-20">
             <Header />
 
-            <div className="max-w-4xl mx-auto px-4 py-8 m-8">
+            {loading ? (
+                <SkeletonProfile />
+            ) : (
+                <div className="max-w-4xl mx-auto px-4 py-8 m-8">
 
                 <div className="max-w-2xl mx-auto">
                     <div className="text-center mb-8">
@@ -58,6 +72,7 @@ export default function Intro() {
                     </div>
                 </div>
             </div>
+            )}
             
             <Footer />
         </div>
