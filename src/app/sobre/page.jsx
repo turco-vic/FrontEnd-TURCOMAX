@@ -54,7 +54,11 @@ export default function Intro() {
 
                     <Card 
                         title="Sobre mim" 
-                        text="Olá! Meu nome é Enzo, tenho 18 anos, e atualmente estou cursando Desenvolvimento de sistema no SENAI Valinhos! Este site foi feito com o propósito de realizar a ativade de Front-End utilizando Next.JS!"
+                        text={[
+                            "Olá! Meu nome é Enzo, tenho 18 anos e estou cursando Desenvolvimento de Sistemas no SENAI Valinhos. Este site foi desenvolvido como parte de uma atividade prática de Front-End, utilizando o framework Next.js 15.",
+                            "O objetivo do projeto foi consumir uma API pública e aplicar conceitos como fetch/axios, componentes, props e estilização. Para isso, escolhi a API do TVmaze, que fornece informações sobre diversas séries de TV.",
+                            "Organizei o projeto em páginas específicas para exibir os dados das séries de forma clara e dinâmica, permitindo ao usuário explorar os conteúdos de maneira interativa e responsiva."
+                        ]}
                     />
                     
                     <Card 
@@ -65,7 +69,7 @@ export default function Intro() {
                     <div className="mb-6">
                         <button 
                             onClick={irParaPaginaSeries} 
-                            className="w-full bg-[#43b0f1] text-white px-8 py-3 rounded-lg hover:bg-blue-600 font-semibold transition-colors duration-300"
+                            className="w-full bg-[#43b0f1] !text-white px-8 py-3 rounded-lg hover:bg-white hover:!text-[#43b0f1] font-semibold transition-colors duration-300"
                         >
                             Página de Séries
                         </button>

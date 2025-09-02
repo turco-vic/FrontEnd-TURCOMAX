@@ -39,12 +39,12 @@
 }
 
 .homeButton {
-    background: linear-gradient(45deg, #ffffff, #dddddd);
+    background: linear-gradient(45deg, #43b0f1, #0066a1);
     border: none;
     padding: 1rem 2rem;
     font-size: 1.1rem;
     font-weight: bold;
-    color: #43b0f1;
+    color: #ffffff;
     border-radius: 50px;
     cursor: pointer;
     text-decoration: none;
@@ -56,8 +56,8 @@
 .homeButton:hover {
     transform: translateY(-3px);
     box-shadow: 0 12px 24px #0000004d;
-    background: linear-gradient(45deg, #5e87f5, #5e87f5);
-    color: #ffffff;
+    background: linear-gradient(45deg, #ffffff, #cfcfcf);
+    color: #43b0f1;
 }
 
 .illustration {

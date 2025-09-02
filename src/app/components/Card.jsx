@@ -5,7 +5,14 @@ export default function Card({ title, text, imgs }) {
         <div className={styles.card}>
             <h3 className={styles.title}>{title}</h3>
             
-            {text && (
+            {/* Renderizar texto como array de parágrafos ou string única */}
+            {Array.isArray(text) ? (
+                text.map((paragraph, index) => (
+                    <p key={index} className={styles.text}>
+                        {paragraph}
+                    </p>
+                ))
+            ) : (
                 <p className={styles.text}>{text}</p>
             )}
             

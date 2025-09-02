@@ -2,9 +2,11 @@
     min-height: 100vh;
     background-color: #212121;
     color: white;
+    padding-top: 8rem;
 }
 
 .content {
+    margin-top: 5rem;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
@@ -12,19 +14,35 @@
 }
 
 .backButton {
-    background: none;
-    border: 1px solid #333;
-    color: white;
+    background-color: #43b0f1;
+    color: #ffffff;
+    font-weight: bold;
     padding: 10px 20px;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-bottom: 30px;
+    margin-bottom: 2rem;
     transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
 }
 
 .backButton:hover {
-    background-color: #333;
-    border-color: #555;
+    background-color: #ffffff;
+    color: #43b0f1;
+    transform: translateX(-7px);
+}
+
+.arrowIcon {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.backButton:hover .arrowIcon {
+    transform: translateX(-7px);
 }
 
 .seriesHeader {
@@ -39,7 +57,7 @@
 
 .seriesImage {
     border-radius: 10px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 30px #00000080;
 }
 
 .seriesInfo {
@@ -157,6 +175,10 @@
 }
 
 @media (max-width: 768px) {
+    .container {
+        padding-top: 10rem;
+    }
+    
     .seriesHeader {
         flex-direction: column;
         align-items: center;
