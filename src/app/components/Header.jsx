@@ -30,11 +30,14 @@ export default function Header() {
             </div>
             
             <nav className={styles.nav}>
-                <Link href="/intro" className={styles.navLink}>
-                    Intro
-                </Link>
                 <Link href="/home" className={styles.navLink}>
                     Home
+                </Link>
+                <Link href="/series" className={styles.navLink}>
+                    Séries
+                </Link>
+                <Link href="/sobre" className={styles.navLink}>
+                    Sobre
                 </Link>
             </nav>
         </div>

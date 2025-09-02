@@ -54,7 +54,7 @@ export default function Intro() {
 
                     <Card 
                         title="Sobre mim" 
-                        text="Olá! Meu nome é Enzo, tenho 17 anos, e atualmente estou cursando Desenvolvimento de sistema no SENAI Valinhos! Este site foi feito com o propósito de realizar a ativade de Front-End utilizando Next.JS!"
+                        text="Olá! Meu nome é Enzo, tenho 18 anos, e atualmente estou cursando Desenvolvimento de sistema no SENAI Valinhos! Este site foi feito com o propósito de realizar a ativade de Front-End utilizando Next.JS!"
                     />
                     
                     <Card 

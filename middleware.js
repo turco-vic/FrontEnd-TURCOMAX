@@ -5,5 +5,5 @@ export const config = {
 };
 
 export function middleware(req) {
-    return NextResponse.redirect(new URL("/intro", req.url));
+    return NextResponse.redirect(new URL("/sobre", req.url));
 }

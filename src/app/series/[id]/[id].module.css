@@ -1,0 +1,178 @@
+.container {
+    min-height: 100vh;
+    background-color: #212121;
+    color: white;
+}
+
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: calc(100vh - 200px);
+}
+
+.backButton {
+    background: none;
+    border: 1px solid #333;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+}
+
+.backButton:hover {
+    background-color: #333;
+    border-color: #555;
+}
+
+.seriesHeader {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.imageContainer {
+    flex-shrink: 0;
+}
+
+.seriesImage {
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+.seriesInfo {
+    flex: 1;
+}
+
+.seriesTitle {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.starIcon {
+    color: #ffd700;
+    font-size: 1.5rem;
+}
+
+.ratingValue {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.genres {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.genre {
+    background-color: #333;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid #555;
+}
+
+.details {
+    margin-bottom: 30px;
+}
+
+.detail {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.detail strong {
+    color: #ccc;
+    margin-right: 8px;
+}
+
+.schedule {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.schedule strong {
+    color: #ccc;
+    margin-right: 8px;
+}
+
+.summary {
+    margin-top: 40px;
+}
+
+.summary h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.summary p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #ccc;
+    text-align: justify;
+}
+
+.loading,
+.error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    text-align: center;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #333;
+    border-top: 4px solid #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.error h2 {
+    margin-bottom: 20px;
+    color: #ff6b6b;
+}
+
+@media (max-width: 768px) {
+    .seriesHeader {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .seriesImage {
+        width: 250px;
+        height: 375px;
+    }
+    
+    .seriesTitle {
+        font-size: 2rem;
+    }
+    
+    .content {
+        padding: 15px;
+    }
+}

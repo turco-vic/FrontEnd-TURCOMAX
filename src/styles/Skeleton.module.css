@@ -18,7 +18,7 @@
     background: transparent;
     border: none;
     border-radius: 0.5rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px #00000033;
     padding: 0;
     overflow: hidden;
 }
@@ -80,7 +80,7 @@
     margin: 2rem auto;
     border-radius: 1rem;
     overflow: hidden;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 32px #0000004d;
     background: linear-gradient(135deg, #212121, #333333);
     display: flex;
     align-items: center;

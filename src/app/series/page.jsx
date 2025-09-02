@@ -2,10 +2,11 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { useRouter } from 'next/navigation';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { SkeletonCarousel, SkeletonGrid, SkeletonPagination } from '../components/Skeleton';
-import styles from './Home.module.css';
+import styles from './Series.module.css';
 
 export default function Home() {
     const [data, setData] = useState([]);
@@ -15,6 +16,7 @@ export default function Home() {
     const [genreShows, setGenreShows] = useState({});
     const [scrollPositions, setScrollPositions] = useState({});
     const [scrollStates, setScrollStates] = useState({});
+    const router = useRouter();
 
     const buscarSeries = async () => {
         setLoading(true);
@@ -582,6 +584,10 @@ export default function Home() {
         }
     };
 
+    const handleSeriesClick = (seriesId) => {
+        router.push(`/series/${seriesId}`);
+    };
+
     return (
         <div className={styles.container}>
             <Header />
@@ -590,7 +596,7 @@ export default function Home() {
                 <SkeletonCarousel />
             ) : topRatedShows.length > 0 && (
                 <div className={styles.carouselContainer}>
-                    <div className={styles.carouselBanner}>
+                    <div className={styles.carouselBanner} onClick={() => handleSeriesClick(topRatedShows[currentCarouselIndex]?.id)}>
                         {topRatedShows[currentCarouselIndex]?.image && (
                             <Image
                                 src={topRatedShows[currentCarouselIndex].image.original}
@@ -666,7 +672,7 @@ export default function Home() {
                                         onScroll={() => handleScroll(genre)}
                                     >
                                         {shows.map((show) => (
-                                            <div key={`${show.id}-1`} className={styles.genreCard}>
+                                            <div key={`${show.id}-1`} className={styles.genreCard} onClick={() => handleSeriesClick(show.id)}>
                                                 {show.image && (
                                                     <Image
                                                         src={show.image.medium}
@@ -680,7 +686,7 @@ export default function Home() {
                                         ))}
 
                                         {shows.map((show) => (
-                                            <div key={`${show.id}-2`} className={styles.genreCard}>
+                                            <div key={`${show.id}-2`} className={styles.genreCard} onClick={() => handleSeriesClick(show.id)}>
                                                 {show.image && (
                                                     <Image
                                                         src={show.image.medium}
@@ -694,7 +700,7 @@ export default function Home() {
                                         ))}
 
                                         {shows.map((show) => (
-                                            <div key={`${show.id}-3`} className={styles.genreCard}>
+                                            <div key={`${show.id}-3`} className={styles.genreCard} onClick={() => handleSeriesClick(show.id)}>
                                                 {show.image && (
                                                     <Image
                                                         src={show.image.medium}
