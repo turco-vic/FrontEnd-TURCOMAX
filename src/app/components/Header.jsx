@@ -36,6 +36,9 @@ export default function Header() {
                 <Link href="/sobre" className={styles.navLink}>
                     Sobre
                 </Link>
+                <Link href="/apiinfo" className={styles.navLink}>
+                    API Info
+                </Link>
             </nav>
         </div>
     );

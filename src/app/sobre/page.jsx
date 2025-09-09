@@ -49,7 +49,7 @@ export default function Intro() {
                                 className="w-full h-full object-cover"
                             />
                         </div>
-                        <p className="text-2xl font-bold text-white">Enzo Turcovic</p>
+                        <p className="text-2xl font-bold text-white">Enzo Turcovic | 2TDS1 - SENAI Valinhos</p>
                     </div>
 
                     <Card 
@@ -57,7 +57,9 @@ export default function Intro() {
                         text={[
                             "Olá! Meu nome é Enzo, tenho 18 anos e estou cursando Desenvolvimento de Sistemas no SENAI Valinhos. Este site foi desenvolvido como parte de uma atividade prática de Front-End, utilizando o framework Next.js 15.",
                             "O objetivo do projeto foi consumir uma API pública e aplicar conceitos como fetch/axios, componentes, props e estilização. Para isso, escolhi a API do TVmaze, que fornece informações sobre diversas séries de TV.",
-                            "Organizei o projeto em páginas específicas para exibir os dados das séries de forma clara e dinâmica, permitindo ao usuário explorar os conteúdos de maneira interativa e responsiva."
+                            "Organizei o projeto em páginas específicas para exibir os dados das séries de forma clara e dinâmica, permitindo ao usuário explorar os conteúdos de maneira interativa e responsiva.",
+                            "Se é humanamente possível considere isso ao seu alcance.",
+                            "- Marco Aurelio"
                         ]}
                     />
                     
@@ -69,7 +71,7 @@ export default function Intro() {
                     <div className="mb-6">
                         <button 
                             onClick={irParaPaginaSeries} 
-                            className="w-full bg-[#43b0f1] !text-white px-8 py-3 rounded-lg hover:bg-white hover:!text-[#43b0f1] font-semibold transition-colors duration-300"
+                            className="w-full bg-[#43b0f1] !text-white px-8 py-3 rounded-lg hover:bg-white hover:!text-[#43b0f1] font-semibold transition-colors duration-300 cursor-pointer hover:cursor-pointer"
                         >
                             Página de Séries
                         </button>
