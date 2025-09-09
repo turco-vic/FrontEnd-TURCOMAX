@@ -149,7 +149,7 @@ export default function SeriesDetail() {
 
                             {series.runtime && (
                                 <div className={styles.detail}>
-                                    <strong>Duração:</strong> {series.runtime} minut
+                                    <strong>Duração:</strong> {series.runtime} minutos
                                 </div>
                             )}
 

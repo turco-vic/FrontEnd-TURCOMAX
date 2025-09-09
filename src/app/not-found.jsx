@@ -13,7 +13,7 @@ export default function NotFound() {
             </p>
             
             <Link href="/series" className={style.homeButton}>
-                Séries
+                Home
             </Link>
         </div>
     );
