@@ -2,7 +2,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { SkeletonCarousel, SkeletonGrid, SkeletonPagination } from '../components/Skeleton';
@@ -16,7 +16,10 @@ export default function Home() {
     const [genreShows, setGenreShows] = useState({});
     const [scrollPositions, setScrollPositions] = useState({});
     const [scrollStates, setScrollStates] = useState({});
+    const [searchResults, setSearchResults] = useState([]);
+    const [isSearching, setIsSearching] = useState(false);
     const router = useRouter();
+    const searchParams = useSearchParams();
 
     const buscarSeries = async () => {
         setLoading(true);
@@ -447,6 +450,33 @@ export default function Home() {
     }, []);
 
     useEffect(() => {
+        const searchTerm = searchParams.get('search');
+        if (searchTerm && data.length > 0) {
+            handleSearch(searchTerm);
+        } else {
+            setIsSearching(false);
+            setSearchResults([]);
+        }
+    }, [searchParams, data]);
+
+    const handleSearch = async (searchTerm) => {
+        setIsSearching(true);
+        try {
+            // Buscar na API do TVMaze por nome
+            const response = await axios.get(`https://api.tvmaze.com/search/shows?q=${encodeURIComponent(searchTerm)}`);
+            const results = response.data.map(item => item.show);
+            setSearchResults(results);
+        } catch (error) {
+            console.error('Erro ao pesquisar séries:', error);
+            // Em caso de erro, buscar localmente nos dados já carregados
+            const localResults = data.filter(show => 
+                show.name.toLowerCase().includes(searchTerm.toLowerCase())
+            );
+            setSearchResults(localResults);
+        }
+    };
+
+    useEffect(() => {
         if (Object.keys(genreShows).length > 0) {
             Object.keys(genreShows).forEach(genre => {
                 const container = document.getElementById(`genre-${genre}`);
@@ -594,7 +624,7 @@ export default function Home() {
             
             {loading ? (
                 <SkeletonCarousel />
-            ) : topRatedShows.length > 0 && (
+            ) : !isSearching && topRatedShows.length > 0 && (
                 <div className={styles.carouselContainer}>
                     <div className={styles.carouselBanner} onClick={() => handleSeriesClick(topRatedShows[currentCarouselIndex]?.id)}>
                         {topRatedShows[currentCarouselIndex]?.image && (
@@ -647,16 +677,18 @@ export default function Home() {
                 </div>
             )}
             
-            <div className={styles.createSeriesContainer}>
-                <button 
-                    className={styles.createSeriesButton}
-                    onClick={() => {
-                        console.log('Criar nova série');
-                    }}
-                >
-                    + Criar Nova Série
-                </button>
-            </div>
+            {!isSearching && (
+                <div className={styles.createSeriesContainer}>
+                    <button 
+                        className={styles.createSeriesButton}
+                        onClick={() => {
+                            router.push('/post-serie');
+                        }}
+                    >
+                        + Criar Nova Série
+                    </button>
+                </div>
+            )}
             
             <div className={styles.content}>
                 {loading ? (
@@ -664,6 +696,64 @@ export default function Home() {
                         <SkeletonGrid count={21} />
                         <SkeletonPagination />
                     </>
+                ) : isSearching ? (
+                    <div className={styles.searchResultsContainer}>
+                        <div className={styles.searchHeader}>
+                            <h2 className={styles.searchTitle}>
+                                Resultados da pesquisa para "{searchParams.get('search')}"
+                            </h2>
+                            <p className={styles.searchCount}>
+                                {searchResults.length} série{searchResults.length !== 1 ? 's' : ''} encontrada{searchResults.length !== 1 ? 's' : ''}
+                            </p>
+                            <button 
+                                className={styles.clearSearchButton}
+                                onClick={() => {
+                                    router.push('/series');
+                                }}
+                            >
+                                Limpar pesquisa
+                            </button>
+                        </div>
+                        <div className={styles.searchResults}>
+                            {searchResults.map((show) => (
+                                <div key={show.id} className={styles.searchResultCard} onClick={() => handleSeriesClick(show.id)}>
+                                    {show.image && (
+                                        <Image
+                                            src={show.image.medium}
+                                            alt={show.name}
+                                            width={150}
+                                            height={210}
+                                            className={styles.searchResultImage}
+                                        />
+                                    )}
+                                    <div className={styles.searchResultInfo}>
+                                        <h3 className={styles.searchResultTitle}>{show.name}</h3>
+                                        {show.rating?.average && (
+                                            <p className={styles.searchResultRating}>
+                                                <span className={styles.starIcon}>★</span> {show.rating.average}
+                                            </p>
+                                        )}
+                                        {show.genres && show.genres.length > 0 && (
+                                            <p className={styles.searchResultGenres}>
+                                                {show.genres.join(' • ')}
+                                            </p>
+                                        )}
+                                        {show.premiered && (
+                                            <p className={styles.searchResultYear}>
+                                                {new Date(show.premiered).getFullYear()}
+                                            </p>
+                                        )}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                        {searchResults.length === 0 && (
+                            <div className={styles.noResults}>
+                                <p>Nenhuma série encontrada para "{searchParams.get('search')}"</p>
+                                <p>Tente pesquisar com outros termos.</p>
+                            </div>
+                        )}
+                    </div>
                 ) : (
                     <div className={styles.genresContainer}>
                         {Object.entries(genreShows).map(([genre, shows]) => (

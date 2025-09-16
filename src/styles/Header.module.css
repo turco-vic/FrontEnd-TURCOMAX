@@ -64,6 +64,73 @@
     color: #ffffff;
 }
 
+.searchContainer {
+    flex: 1;
+    max-width: 400px;
+    margin: 0 20px;
+}
+
+.searchForm {
+    display: flex;
+    align-items: center;
+    background-color: #1a1a1a;
+    border-radius: 25px;
+    padding: 2px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.searchForm:focus-within {
+    border-color: #43b0f1;
+    box-shadow: 0 0 0 3px rgba(67, 176, 241, 0.1);
+}
+
+.searchInput {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    color: #ffffff;
+    font-size: 1rem;
+    border-radius: 25px;
+}
+
+.searchInput::placeholder {
+    color: #999999;
+}
+
+.searchButton {
+    background-color: #43b0f1;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #ffffff;
+}
+
+.searchButton svg {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2.5;
+}
+
+.searchButton:hover {
+    background-color: #2563eb;
+    transform: scale(1.05);
+}
+
+.searchButton:disabled {
+    background-color: #666666;
+    cursor: not-allowed;
+    transform: none;
+}
+
 @media (max-width: 425px) {
     .container {
         padding: 15px;
@@ -94,6 +161,26 @@
         font-size: 1rem;
         padding: 8px 15px;
     }
+
+    .searchContainer {
+        max-width: 200px;
+        margin: 0 10px;
+    }
+
+    .searchInput {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+
+    .searchButton {
+        width: 35px;
+        height: 35px;
+    }
+
+    .searchButton svg {
+        width: 16px;
+        height: 16px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -113,6 +200,26 @@
     .navLink {
         font-size: 0.9rem;
         padding: 6px 12px;
+    }
+
+    .searchContainer {
+        max-width: 180px;
+        margin: 0 8px;
+    }
+
+    .searchInput {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+
+    .searchButton {
+        width: 32px;
+        height: 32px;
+    }
+
+    .searchButton svg {
+        width: 14px;
+        height: 14px;
     }
 }
 
