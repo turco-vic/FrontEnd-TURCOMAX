@@ -647,6 +647,17 @@ export default function Home() {
                 </div>
             )}
             
+            <div className={styles.createSeriesContainer}>
+                <button 
+                    className={styles.createSeriesButton}
+                    onClick={() => {
+                        console.log('Criar nova série');
+                    }}
+                >
+                    + Criar Nova Série
+                </button>
+            </div>
+            
             <div className={styles.content}>
                 {loading ? (
                     <>

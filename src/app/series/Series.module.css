@@ -396,6 +396,37 @@
     cursor: not-allowed;
 }
 
+.createSeriesContainer {
+    width: 95%;
+    margin: 2rem auto;
+    padding: 2rem 0;
+}
+
+.createSeriesButton {
+    width: 100%;
+    background-color: #43b0f1;
+    color: #ffffff;
+    padding: 1rem 2.5rem;
+    border-radius: 0.75rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(67, 176, 241, 0.3);
+}
+
+.createSeriesButton:hover {
+    background-color: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(67, 176, 241, 0.4);
+}
+
+.createSeriesButton:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(67, 176, 241, 0.3);
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
